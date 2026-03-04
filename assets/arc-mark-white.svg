@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" fill="none">
+  <!-- Left leg of A -->
+  <path d="M100 10 L15 210 L50 210 L100 80 Z" fill="#E8E8E6"/>
+  <!-- Right leg of A -->
+  <path d="M100 10 L185 210 L150 210 L100 80 Z" fill="#E8E8E6"/>
+  <!-- Gold arc cutting through base -->
+  <path d="M32 168 Q100 108 168 168 Q140 148 100 145 Q60 148 32 168 Z" fill="#B89A3E"/>
+</svg>
