@@ -587,8 +587,8 @@
     ARC is preparing for staged, responsible disclosure. For academic collaboration,
     investment inquiry, or strategic partnership — reach out.
   </p>
-  <a href="mailto:contact@arc.ceo" class="contact-link reveal" style="transition-delay:.35s">
-    contact@arc.ceo
+  <a id="contact-link" href="#" class="contact-link reveal" style="transition-delay:.35s" aria-label="Contact ARC">
+    <span id="contact-text">···</span>
   </a>
 </section>
 
@@ -639,6 +639,37 @@
   burger.addEventListener('click',()=>drawer.classList.add('open'));
   drawerClose.addEventListener('click',()=>drawer.classList.remove('open'));
   drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>drawer.classList.remove('open')));
+</script>
+
+<!-- Shield: contact email protection -->
+<script type="module">
+  import init, { WasmShield } from '/assets/shield_core.js';
+
+  const ENCRYPTED_EMAIL = 'ClxfFC32gXued0cpdlK3hg8akvZpr8Guwje8SoVoSoNleHYONjY5Kv+ZCoKS8MqSCQ5CENGgc7pJudpUGLGi6lAZWPYqJRvqzB6kTsXmI1XW5ZZgYp5GYrrMxEaFOxBOjqKWRoBBUpjbqf175+0VGR2EkaC2pFz7NxCyFp82nOFoO1Hxcj027R2arYSrdN4Kf3NGX/x+KGhZQI+D9sSEh3quuWvbnhXo2Z28UZCf';
+
+  async function revealContact() {
+    try {
+      await init({ module_or_path: '/assets/shield_core_bg.wasm' });
+      const shield = new WasmShield('arc.ceo', 'contact');
+      const encBytes = Uint8Array.from(atob(ENCRYPTED_EMAIL), c => c.charCodeAt(0));
+      const dec = shield.decrypt(encBytes);
+      const email = new TextDecoder().decode(dec);
+      const link = document.getElementById('contact-link');
+      const text = document.getElementById('contact-text');
+      if (link && text && email) {
+        text.textContent = email;
+        link.href = 'mailto:' + email;
+      }
+    } catch(e) {
+      // Graceful fallback — never break the page
+      const link = document.getElementById('contact-link');
+      if (link) link.href = 'mailto:contact@arc.ceo';
+      const text = document.getElementById('contact-text');
+      if (text) text.textContent = 'contact@arc.ceo';
+    }
+  }
+
+  revealContact();
 </script>
 </body>
 </html>
