@@ -1,0 +1,9 @@
+# Brand assets (store separately)
+*.pdf
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Originals
+index (1).html
