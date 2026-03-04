@@ -364,6 +364,16 @@
       color:var(--muted); max-width:42ch;
     }
     .founder-bio strong { color:var(--white); font-weight:400; }
+    .founder-link {
+      font-family:'JetBrains Mono',monospace;
+      font-size:.62rem; letter-spacing:.18em;
+      color:var(--muted); text-decoration:none;
+      text-transform:uppercase;
+      display:inline-flex; align-items:center; gap:.6rem;
+      transition:color .25s;
+    }
+    .founder-link:hover { color:var(--gold); }
+    .founder-link::before { content:'↗'; font-size:.75rem; }
     @media (max-width:880px) {
       #founder { grid-template-columns:1fr; }
       .founder-photo { padding:2rem; }
@@ -581,6 +591,9 @@
       They need the <strong>right mathematics</strong>.
       ARC is the formalization of what physical reality was always doing.
     </p>
+    <a href="https://blog.gibraltarcloud.dev/" target="_blank" rel="noopener" class="founder-link reveal" style="transition-delay:.55s">
+      פרשת השבוע — Torah · Mathematics · AI
+    </a>
   </div>
 </section>
 
