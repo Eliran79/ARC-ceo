@@ -1,7 +1,7 @@
 ---
 id: deployment-003
 title: Production validation and SSL verification
-status: todo
+status: doing
 priority: high
 tags:
 - deployment

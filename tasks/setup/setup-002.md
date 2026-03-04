@@ -1,7 +1,7 @@
 ---
 id: setup-002
 title: Initialize Git repository and push to GitHub
-status: doing
+status: done
 priority: critical
 tags:
 - setup

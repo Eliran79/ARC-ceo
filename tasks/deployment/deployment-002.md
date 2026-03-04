@@ -1,7 +1,7 @@
 ---
 id: deployment-002
 title: Configure GoDaddy DNS for arc.ceo
-status: todo
+status: done
 priority: critical
 tags:
 - deployment

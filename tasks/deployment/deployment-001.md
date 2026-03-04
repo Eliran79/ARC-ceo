@@ -1,7 +1,7 @@
 ---
 id: deployment-001
 title: GitHub Actions deploy to GitHub Pages
-status: todo
+status: done
 priority: critical
 tags:
 - deployment
