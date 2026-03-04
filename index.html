@@ -389,15 +389,23 @@
     }
     .founder-bio strong { color:var(--white); font-weight:400; }
     .founder-link {
-      font-family:'JetBrains Mono',monospace;
-      font-size:.62rem; letter-spacing:.18em;
-      color:var(--muted); text-decoration:none;
-      text-transform:uppercase;
-      display:inline-flex; align-items:center; gap:.6rem;
-      transition:color .25s;
+      display:inline-block;
+      background:#E8E8E6;
+      border-radius:10px;
+      padding:.75rem 1.25rem;
+      text-decoration:none;
+      transition:transform .2s, box-shadow .2s;
+      box-shadow:0 2px 16px rgba(0,0,0,.35);
     }
-    .founder-link:hover { color:var(--gold); }
-    .founder-link::before { content:'↗'; font-size:.75rem; }
+    .founder-link:hover {
+      transform:translateY(-2px);
+      box-shadow:0 6px 24px rgba(184,154,62,.22);
+    }
+    .founder-link img {
+      display:block;
+      width:140px;
+      height:auto;
+    }
     @media (max-width:880px) {
       #founder { grid-template-columns:1fr; }
       .founder-photo { padding:2rem; }
@@ -617,7 +625,7 @@
       ARC is the formalization of what physical reality was always doing.
     </p>
     <a href="https://blog.gibraltarcloud.dev/" target="_blank" rel="noopener" class="founder-link reveal" style="transition-delay:.55s">
-      פרשת השבוע — Torah · Mathematics · AI
+      <img src="/assets/parasha-logo.png" alt="Parasha of the Week — Torah · Mathematics · AI" width="140" height="140">
     </a>
   </div>
 </section>
